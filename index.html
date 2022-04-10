@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel='stylesheet' href='./assets/formio/formio.full.min.css'>
+        <script src='./assets/formio/formio.full.min.js'></script>
+        <!-- <script type='text/javascript'>
+            window.onload = function () {
+                Formio.createForm(document.getElementById('formio'), 'http://localhost:3000/data/57aa1d2a5b7a477b002717fe');
+            };
+        </script> -->
+        <script type='text/javascript'>
+            window.onload = function () {
+                Formio.createForm(document.getElementById('formio'), {
+                    components: [
+                        {
+                            type: 'textfield',
+                            key: 'firstName',
+                            label: 'First Name',
+                            placeholder: 'Enter your first name',
+                            input: true
+                        },
+                        {
+                            type: 'textfield',
+                            key: 'lastName',
+                            label: 'Last Name',
+                            placeholder: 'Enter your last name',
+                            input: true
+                        },
+                        {
+                            type: 'button',
+                            action: 'submit',
+                            label: 'Submit',
+                            theme: 'primary',
+                        }
+                    ]
+                });
+            };
+            document.getElementsByTagName('button').onclick = function (event) {
+                event.preventDefault();
+                var data = event.detail.data;
+                console.log(data);
+
+            }
+
+        </script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form method="post" id="myForm">
+            <div id="formio"></div>
+        </form>
+        <!-- <div class="container">
+            <div class="col" id="addRow">
+                <div class="row"></div>
+            </div>
+            <div class="btn btn-primary" id="addItem">
+                + add item
+            </div>
+        </div> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="./js/main.js"></script>
+    </body>
+
+</html>
